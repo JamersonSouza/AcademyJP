@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+.container-fluid{
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* classes Auxiliares */
+.containerAux {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2% 2%;
+}
+
+.center {
+	text-align: center;
+	color: #fff;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.wp {
+	float: left;
+	width: 33, 3%;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.wm {
+	width: 50%;
+	float: left;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.title {
+	font-size: 1.3em;
+	color: #fff;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
+	transition: 0.3s;
+	font-size: 1em;
+}
+
+.navbar a:hover {
+	color: #6D214F
+}
+
+#close {
+	color: #fff;
+}
+
+#close:hover {
+	border: 1px solid #d63031;
+	border-radius: 8%;
+	color: #d63031;
+}
+
+
+footer.rodape {
+	background-color: #8e44ad;
+	padding: 15px 0;
+	color: #fff;
+	text-align: center;
+}
+
+footer.rodape p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+/*Formatação Labels */
+.lbl{font-size: 1.2em; font-family: 'Open Sans', serif; font-weight: normal;}
+
+/* Linha colorição */
+.colorgraph {
+  height: 2px;
+  border-top: 0;
+  background: #9b59b6;
+  border-radius: 5px;
+}
+
+.bt{
+	background: #fff;
+	color: #8e44ad;
+	border: 1px solid #8e44ad;
+	border-radius: 6px;
+	padding: 7px;
+	transition: 0.5s;
+}
+.bt:hover{color: #fff; background: #8e44ad;}
+
+/* Responsividade */
+@media screen and(max-width: 798px) {
+	.navbar li {
+		width: 100%;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	section.secao{
+	background-position: center;
+	}
+	.title-bg{
+		font-size: 2em;
+	}
+	.navbar li {
+		width: 100%;
+		display: block; 
+	}
+	
+	#close{ 
+	border: none;
+	}
+	
+	#close:hover{
+	
+	border: 1px solid #d63031;
+	border-radius: 100px;
+	}
+	.btn{
+		width: 100%;
+		padding: 10px;
+		font-size: 0.8em;
+	}
+	
+}

@@ -18,4 +18,10 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@GetMapping("/cadastro")
+	public ModelAndView cadastroAluno() {
+		ModelAndView mv = new ModelAndView("Cadastro");
+		return mv;
+	}
+	
 }

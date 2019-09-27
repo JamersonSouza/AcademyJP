@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="JamersonSouza">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Projeto para Gerenciamento de alunos">
+<link rel="stylesheet" th:href="@{assets/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{assets/style-cadastro.css}">
+<script th:src="@{assets/jquery-3.4.1.min.js}"></script>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap"
+	rel="stylesheet">
+<script th:src="@{assets/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap.bundle.min.js}"></script>
+<title>Cadastro Aluno :: AcademyJP</title>
+</head>
+<script type="text/javascript">
+	function mascara(t, mask) {
+		var i = t.value.length;
+		var saida = mask.substring(1, 0);
+		var texto = mask.substring(i)
+		if (texto.substring(0, 1) != saida) {
+			t.value += texto.substring(0, 1);
+		}
+	}
+</script>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-light navbar-expand-lg"
+						style="background-color: #a55eea">
+						<a th:href="@{/}" class="navbar-brand"> <img
+							th:src="@{img/logoJ2.png}" width="30px" height="30px"
+							class="d-inline-block align-top"> <span class="title">uventude
+								Presente</span>
+						</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#nav1">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-end"
+							id="nav1">
+							<ul class="navbar nav">
+								<li class="nav-item"><a th:href="@{/}"
+									class="nav-link active"><i class="fas fa-home"></i> HOME</a></li>
+
+								<li class="nav-item"><a th:href="@{/cadastro}"
+									style="color: #6F1E51" class="nav-link"><i
+										class="fas fa-user-graduate"></i> CADASTRAR ALUNO</a></li>
+
+								<li class="nav-item"><a href="#" class="nav-link"><i
+										class="fas fa-search"></i> PESQUISAR ALUNO</a></li>
+
+								<li class="nav-item"><a href="#" class="nav-link"
+									id="close"><i class="fas fa-times"></i> SAIR</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="containerAux">
+		<h2 class="mt-4">CADASTRO DE ALUNOS</h2>
+		<hr class="colorgraph">
+		<form>
+			<div class="row">
+				<div class="form-group col-lg-6 col-sm-12">
+					<label class="lbl" for="inputNome">Nome:</label> <input type="text"
+						maxlength="70" placeholder="Exemplo: João Victor Ferreira"
+						id="inputNome" class="form-control">
+				</div>
+				<div class="form-group col-lg-6 col-sm-12">
+					<label class="lbl" for="inputCurso">Curso:</label> <select
+						class="form-control" id="inputCurso">
+						<option value="-1" data-default disabled selected>Selecione
+							o curso</option>
+						<option value="Assistente Adm">Assistente Administrativo</option>
+						<option value="Op Caixa">CorelDraw</option>
+						<option value="Op Caixa">Informática</option>
+						<option value="Op Caixa">Operador de Caixa</option>
+						<option value="Op Caixa">Vendas</option>
+					</select>
+				</div>
+				<div class="form-group col-lg-4 col-sm-12">
+					<label class="lbl" for="inputIdade">Idade</label> <input
+						type="text" maxlength="7" class="form-control"
+						placeholder="exemplo: 18 anos">
+				</div>
+				<div class="form-group col-lg-4 col-sm-12">
+					<label class="lbl" for="inputData">Data do Cadastro</label> <input
+						type="date" class="form-control" id="inputData">
+				</div>
+				<div class="form-group col-lg-4 col-sm-12">
+					<label class="lbl" for="inputTurno">Horário Disponível:</label> <select
+						class="form-control" id="inputTurno">
+						<option value="-1" data-default disabled selected>Escolha
+							o turno do aluno</option>
+						<option value="Manhã">Manhã</option>
+						<option value="Tarde">Tarde</option>
+						<option value="Noite" data-default disabled>Noite</option>
+					</select>
+				</div>
+			</div>
+			<h2 class="mt-4">INFORMAÇÕES P/ CONTATO</h2>
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="form-group col-lg-6 col-sm-12">
+					<label class="lbl" for="inputTel1">Telefone 1:</label> <input
+						type="text" maxlength="14"
+						onkeypress="mascara(this, '## # ####-####')"
+						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel1"
+						class="form-control"> <small style="color: #d63031">*Preferencialmente
+						Whatsapp</small>
+				</div>
+				<div class="form-group col-lg-6 col-sm-12">
+					<label class="lbl" for="inputTel2">Telefone 2:</label> <input
+						type="text" maxlength="14"
+						onkeypress="mascara(this, '## # ####-####')"
+						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel2"
+						class="form-control">
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-lg-4 offset-lg-3  mt-4">
+				<button class="bt col-sm-12">SALVAR
+					INFORMAÇÕES</button>
+					</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+.container-fluid{
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* classes Auxiliares */
+.containerAux{
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2% 2%;
+}
+
+.center {
+	text-align: center;
+	color: #fff;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.wp {
+	float: left;
+	width: 33, 3%;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.wm {
+	width: 50%;
+	float: left;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+section.login{
+	background-size: cover !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	min-height: 730px;
+	width: 100%;
+}
+
+/* Formulario */
+
+.main-div{
+  background: #fff none repeat scroll 0 0;
+  border-radius: 10px;
+  margin: 0px auto 30px;
+  max-width: 45%;
+  padding: 50px 70px;
+  margin-top: 80px;
+}
+.painel h2{ color:#8e44ad; font-size:2.2em; margin:0 0 8px 0; text-align: center;}
+.painel p { color:#777777; font-size:1em; margin-bottom:30px; line-height:24px; text-align: center;}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+.alzheimer a{
+  color: #9b59b6;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.alzheimer {
+  text-align: left; margin-bottom:30px;
+}
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 1em;
+  height: 50px;
+  line-height: 50px;
+}
+
+.login-form  .btn.btn-primary {
+  background: #9b59b6 none repeat scroll 0 0;
+  border-color: #8e44ad;
+  color: #ffffff;
+  font-size: 1em;
+  width: 100%;
+  height: 50px;
+  font-family: 'Open Sans';
+  font-weight: normal;
+  line-height: 50px;
+  padding: 0;
+}
+.back{margin: 0 auto; text-align: center; margin-top: 10px;}
+.back a{text-decoration: none; color: #333; transition: 0.8s; font-weight: normal; font-family: 'Open Sans';}
+.back a:hover{color: #9b59b6; text-decoration: underline;}
+
+footer.rodape {
+	background-color: #8e44ad;
+	padding: 15px 0;
+	color: #fff;
+	text-align: center;
+}
+
+footer.rodape p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+/* Responsividade */
+@media screen and(max-width: 798px) {
+		.main-div {
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.main-div {
+		max-width: 100%;
+	}
+
+}

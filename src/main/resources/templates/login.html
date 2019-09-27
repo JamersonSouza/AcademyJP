@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="JamersonSouza">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Projeto para Gerenciamento de alunos">
+<link rel="stylesheet" th:href="@{assets/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{assets/style-login.css}">
+<script th:src="@{assets/jquery-3.4.1.min.js}"></script>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap"
+	rel="stylesheet">
+<script th:src="@{assets/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap.bundle.min.js}"></script>
+<title>Login :: AcademyJP</title>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<section class="login"
+			style="background-image: url('img/bg-login2.jpg')">
+			<section class="login-form">
+				<div class="containerAux">
+				<div class="main-div">
+					<div class="painel">
+						<h2>Login</h2>
+						<p>Por favor insira suas credenciais para acesso ao sistema</p>
+					</div>
+					<form>
+						<div class="form-group">
+						<label for="inputEmail">Email:</label>
+							<input style="color: #000" type="email" maxlength="254" class="form-control" id="inputEmail"
+								placeholder="exemplo@gmail.com">
+						</div>
+						<div class="form-group">
+						<label for="inputPassword">Senha:</label>
+							<input style="color: #000" type="password" class="form-control" id="inputPassword"
+								placeholder="Insira sua senha">
+						</div>
+						<div class="alzheimer">
+							<a href="#">Recuperar Senha</a>
+						</div>
+						<button type="submit" class="btn btn-primary">LOGIN</button>
+						<div class="back">
+								<a th:href="@{/}" class="back">VOLTAR</a>
+						</div>
+					</form>
+				</div>
+			</section>
+	</section>
+			</div>
+			 <footer class="rodape">
+        <p>Desenvolvido por &copy;Jamerson Souza - Todos direitos Reservado 2019.</p>
+    </footer>
+</body>
+</html>
