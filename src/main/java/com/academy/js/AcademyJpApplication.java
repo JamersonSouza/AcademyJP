@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.academy.controller.AlunoController;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.academy.controller")
 public class AcademyJpApplication {
 
 	public static void main(String[] args) {
