@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+.container-fluid{
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* classes Auxiliares */
+.containerAux {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2% 2%;
+}
+
+.center {
+	text-align: center;
+	color: #fff;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.wp {
+	float: left;
+	width: 33, 3%;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.wm {
+	width: 50%;
+	float: left;
+}
+
+.wg {
+	width: 100%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.title {
+	font-size: 1.3em;
+	color: #fff;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Open Sans', serif;
+	font-weight: bold;
+	transition: 0.3s;
+	font-size: 1em;
+}
+
+.navbar a:hover {
+	color: #6D214F
+}
+
+#close {
+	color: #fff;
+}
+
+#close:hover {
+	border: 1px solid #d63031;
+	border-radius: 8%;
+	color: #d63031;
+}
+
+section.secao {
+	padding: 30px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	background-position: center;
+	min-height: 700px;
+	position: relative;
+}
+/* Sombra no fundo */
+.sombra {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+section.secao > .containerAux {
+	position: relative;
+	z-index: 105;
+}
+
+.title-bg {
+	font-size: 3.2em;
+	text-shadow: 4px 4px 5px #000;
+	text-transform: uppercase;
+	margin-top: 200px;
+}
+
+.btn {
+	width: 280px;
+	color: #fff;
+	padding: 20px; 
+	border : 2px solid #a55eea;
+	border-radius: 10px;
+	border: 2px solid #a55eea;
+}
+
+.btn:hover {
+	color: #8854d0;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+.butoes h5{
+	padding: 10px;
+}
+
+.butoes {
+	margin-top: 20px;
+}
+
+footer.rodape {
+	background-color: #8e44ad;
+	padding: 15px 0;
+	color: #fff;
+	text-align: center;
+}
+
+footer.rodape p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+}
+
+/* Responsividade */
+@media screen and(max-width: 798px) {
+	.navbar li {
+		width: 100%;
+		display: block;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	section.secao{
+	background-position: center;
+	}
+	.title-bg{
+		font-size: 2em;
+	}
+	.navbar li {
+		width: 100%;
+		display: block; 
+	}
+	
+	#close{ 
+	border: none;
+	}
+	
+	#close:hover{
+	
+	border: 1px solid #d63031;
+	border-radius: 100px;
+	}
+	.btn{
+		width: 100%;
+		padding: 10px;
+		font-size: 0.8em;
+	}
+	.wm{
+		width: 100%;
+		margin-bottom: 5px;
+		display: block;
+		padding-right: 0px;
+		padding-left: 0px;
+		
+	}
+}

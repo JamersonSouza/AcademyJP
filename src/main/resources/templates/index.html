@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="JamersonSouza">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Projeto para Gerenciamento de alunos">
+<link rel="stylesheet" th:href="@{assets/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{assets/style.css}">
+<script th:src="@{assets/jquery-3.4.1.min.js}"></script>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap" rel="stylesheet">
+<script th:src="@{assets/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap.bundle.min.js}"></script>
+<title>Sistema de Gerenciamento</title>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-light navbar-expand-lg"
+						style="background-color: #a55eea">
+						<a th:href="@{/}" class="navbar-brand"> <img th:src="@{img/logoJ2.png}"
+							width="30px" height="30px" class="d-inline-block align-top">
+							<span class="title">uventude Presente</span>
+						</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#nav1">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					<div class="collapse navbar-collapse justify-content-end" id="nav1">
+						<ul class="navbar nav">
+							<li class="nav-item">
+							<a th:href="@{/}" class="nav-link active"><i class="fas fa-home"></i> HOME</a>
+							</li>
+							
+							<li class="nav-item">
+							<a href="#" class="nav-link"><i class="fas fa-user-graduate"></i> CADASTRAR ALUNO</a>
+							</li>
+							
+							<li class="nav-item">
+							<a href="#" class="nav-link"><i class="fas fa-search"></i> PESQUISAR ALUNO</a>
+							</li>
+							
+							<li class="nav-item">
+							<a href="#" class="nav-link" id="close"><i class="fas fa-times"></i> SAIR</a>
+							</li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="secao" style="background-image: url('img/bg.jpg');">
+	<div class="sombra"></div>
+	<div class="containerAux">
+		<h1 class="center title-bg">Gerenciamento de Alunos</h1>
+	<div class="butoes">
+		<div class="wm">
+		<h5 style="text-align: right;"><a href="#" class="btn justify-content-center"><i class="fas fa-user-graduate"></i> CADASTRAR ALUNO</a></h5>
+		</div>
+		<div class="wm">
+		<h5><a href="#" class="btn justify-content-center"><i class="fas fa-search"></i> ENCONTRAR ALUNO</a></h5>
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+	</section>
+
+ <footer class="rodape">
+        <p>Desenvolvido por &copy;Jamerson Souza - Todos direitos Reservado 2019.</p>
+    </footer>
+</body>
+</html>
