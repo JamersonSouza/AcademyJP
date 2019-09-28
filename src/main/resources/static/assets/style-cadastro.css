@@ -6,8 +6,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
-* {
+body{
+	background-color: rgba(144,76,152,0.1);
+}
+*{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;

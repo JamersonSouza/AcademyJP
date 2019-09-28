@@ -82,10 +82,10 @@
 						<option value="-1" data-default disabled selected>Selecione
 							o curso</option>
 						<option value="Assistente Adm">Assistente Administrativo</option>
-						<option value="Op Caixa">CorelDraw</option>
-						<option value="Op Caixa">Informática</option>
+						<option value="CorelDraw">CorelDraw</option>
+						<option value="Informatica">Informática</option>
 						<option value="Op Caixa">Operador de Caixa</option>
-						<option value="Op Caixa">Vendas</option>
+						<option value="Vendas">Vendas</option>
 					</select>
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
@@ -94,15 +94,15 @@
 						placeholder="exemplo: 18 anos">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
-					<label class="lbl" for="inputData">Data do Cadastro</label> <input
-						type="date" class="form-control" id="inputData">
+					<label class="lbl" for="inputData">Data do Cadastro:</label> <input
+						type="date" min="2019-01-31" class="form-control" id="inputData">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputTurno">Horário Disponível:</label> <select
 						class="form-control" id="inputTurno">
 						<option value="-1" data-default disabled selected>Escolha
 							o turno do aluno</option>
-						<option value="Manhã">Manhã</option>
+						<option value="Manha">Manhã</option>
 						<option value="Tarde">Tarde</option>
 						<option value="Noite" data-default disabled>Noite</option>
 					</select>
@@ -113,7 +113,7 @@
 			<div class="row">
 				<div class="form-group col-lg-6 col-sm-12">
 					<label class="lbl" for="inputTel1">Telefone 1:</label> <input
-						type="text" maxlength="14"
+						type="tel" maxlength="14"
 						onkeypress="mascara(this, '## # ####-####')"
 						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel1"
 						class="form-control"> <small style="color: #d63031">*Preferencialmente
@@ -121,14 +121,14 @@
 				</div>
 				<div class="form-group col-lg-6 col-sm-12">
 					<label class="lbl" for="inputTel2">Telefone 2:</label> <input
-						type="text" maxlength="14"
+						type="tel" maxlength="14"
 						onkeypress="mascara(this, '## # ####-####')"
 						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel2"
 						class="form-control">
 				</div>
 			</div>
 			<div class="row">
-			<div class="col-lg-4 offset-lg-3  mt-4">
+			<div class="col-lg-4 offset-lg-4  mt-4">
 				<button class="bt col-sm-12">SALVAR
 					INFORMAÇÕES</button>
 					</div>
