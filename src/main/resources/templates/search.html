@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="JamersonSouza">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Projeto para Gerenciamento de alunos">
+<link rel="stylesheet" th:href="@{assets/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{assets/style-search.css}">
+<script th:src="@{assets/jquery-3.4.1.min.js}"></script>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap" rel="stylesheet">
+<script th:src="@{assets/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap.bundle.min.js}"></script>
+<title>Pesquisa Aluno :: AcademyJP</title>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-light navbar-expand-lg"
+						style="background-color: #a55eea">
+						<a th:href="@{/}" class="navbar-brand"> <img th:src="@{img/logoJ2.png}"
+							width="30px" height="30px" class="d-inline-block align-top">
+							<span class="title">uventude Presente</span>
+						</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#nav1">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					<div class="collapse navbar-collapse justify-content-end" id="nav1">
+						<ul class="navbar nav">
+							<li class="nav-item">
+							<a th:href="@{/}" class="nav-link active"><i class="fas fa-home"></i> HOME</a>
+							</li>
+							
+							<li class="nav-item">
+							<a th:href="@{/cadastro}" class="nav-link"><i class="fas fa-user-graduate"></i> CADASTRAR ALUNO</a>
+							</li>
+							
+							<li class="nav-item">
+							<a href="#"  style="color: #6F1E51"  class="nav-link"><i class="fas fa-search"></i> PESQUISAR ALUNO</a>
+							</li>
+							
+							<li class="nav-item">
+							<a href="#" class="nav-link" id="close"><i class="fas fa-times"></i> SAIR</a>
+							</li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+<body>
+	<div class="containerAux">
+	<h2 class="titulo">Escolha a forma que deseja Encontrar o Aluno <i class="fas fa-search"></i></h2>
+	<hr class="colorgraph">
+	   <div class="row">
+	   <!-- todos -->
+            <div class="col-lg-4">
+                <div class="card mt-2" style="width: 20rem;">
+                    <a href="#" title="Pesquisar dentre todos os alunos"><img class="card-img-top" src="img/todos.jpg"></a>
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Todos Alunos</h4>
+                        <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos cadastrados no sistema.</h6>
+                        <a href="#" class="card-link">Clique aqui.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Concluidos -->
+             <div class="col-lg-4 ">
+                <div class="card mt-2" style="width: 20rem;">
+                   <a href="#" title="Pesquisar apenas os concluidos"><img class="card-img-top mb-4" src="img/concluidos.jpg"></a>
+                    <div class="card-body ">
+                        <h4 class="card-title text-center ">Concluintes</h4>
+                        <h6 class="card-subtitle mb-3 mt-2 text-muted">Encontre todos alunos com status de curso concluído.</h6>
+                        <a href="#" class="card-link">Clique aqui.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desistentes -->
+               <div class="col-lg-4 ">
+                <div class="card mt-2" style="width: 20rem;">
+                    <a href="#" title="Pesquisar Alunos desistentes"><img class="card-img-top mb-4" src="img/desistents.jpg"></a>
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Desistentes</h4>
+                        <h6 class="card-subtitle mb-3 mt-2 text-muted">Encontre todos alunos que desistiram do curso.</h6>
+                        <a href="#" class="card-link">Clique aqui.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Em andamento -->
+            <div class="col-lg-4">
+                <div class="card mt-2" style="width: 20rem;">
+                    <a href="#" title="Pesquisar os que estão em andamento"><img class="card-img-top" src="img/andamento.jpg"></a>
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Em Andamento</h4>
+                        <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos que ainda estão fazendo o curso.</h6>
+                        <a href="#" class="card-link">Clique aqui.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+</body>
+</html>

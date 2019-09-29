@@ -51,4 +51,9 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@GetMapping("/search")
+	public ModelAndView search() {
+		ModelAndView mv = new ModelAndView("search");
+		return mv;
+	}
 }

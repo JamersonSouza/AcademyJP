@@ -6,8 +6,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
-* {
+*{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -16,7 +15,7 @@
 .containerAux {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 2% 2%;
+	padding: 2% 5%;
 }
 
 .center {
@@ -55,9 +54,13 @@
 	font-size: 1.3em;
 	color: #fff;
 }
-.navbar-toggler{
-	background-color: rgba(255,255,255,0.8);
+.titulo{
+	font-family: 'Roboto', serif;
+	text-transform: uppercase;
+	font-size: 1.7em;
+	margin-top: 40px;
 }
+
 .navbar a {
 	text-decoration: none;
 	color: #fff;
@@ -66,7 +69,9 @@
 	transition: 0.3s;
 	font-size: 1em;
 }
-
+.navbar-toggler{
+	background-color: rgba(255,255,255,0.8);
+}
 .navbar a:hover {
 	color: #6D214F
 }
@@ -81,58 +86,6 @@
 	color: #d63031;
 }
 
-section.secao {
-	padding: 30px;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover !important;
-	background-position: center;
-	min-height: 700px;
-	position: relative;
-}
-/* Sombra no fundo */
-.sombra {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 100;
-	background: rgba(0, 0, 0, 0.7);
-}
-
-section.secao > .containerAux {
-	position: relative;
-	z-index: 105;
-}
-
-.title-bg {
-	font-size: 3.2em;
-	text-shadow: 4px 4px 5px #000;
-	text-transform: uppercase;
-	margin-top: 200px;
-}
-
-.btn {
-	width: 280px;
-	color: #fff;
-	padding: 20px; 
-	border : 2px solid #a55eea;
-	border-radius: 10px;
-	border: 2px solid #a55eea;
-}
-
-.btn:hover {
-	color: #8854d0;
-	background-color: rgba(0, 0, 0, 0.9);
-}
-.butoes h5{
-	padding: 10px;
-}
-
-.butoes {
-	margin-top: 20px;
-}
 
 footer.rodape {
 	background-color: #8e44ad;
@@ -146,6 +99,27 @@ footer.rodape p {
 	font-weight: normal;
 	font-size: 1.2em;
 }
+
+/*Formatação Labels */
+.lbl{font-size: 1.2em; font-family: 'Open Sans', serif; font-weight: normal;}
+
+/* Linha colorição */
+.colorgraph {
+  height: 2px;
+  border-top: 0;
+  background: #9b59b6;
+  border-radius: 5px;
+}
+
+.bt{
+	background: #fff;
+	color: #8e44ad;
+	border: 1px solid #8e44ad;
+	border-radius: 6px;
+	padding: 7px;
+	transition: 0.5s;
+}
+.bt:hover{color: #fff; background: #8e44ad;}
 
 /* Responsividade */
 @media screen and(max-width: 798px) {
@@ -181,12 +155,5 @@ footer.rodape p {
 		padding: 10px;
 		font-size: 0.8em;
 	}
-	.wm{
-		width: 100%;
-		margin-bottom: 5px;
-		display: block;
-		padding-right: 0px;
-		padding-left: 0px;
-		
-	}
+	
 }

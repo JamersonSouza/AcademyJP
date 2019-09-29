@@ -90,12 +90,12 @@
 		</div>
 	</div>
 			<div class="row">
-				<div class="form-group col-lg-6 col-sm-12">
+				<div class="form-group col-lg-5 col-sm-12">
 					<label class="lbl" for="inputNome">Nome:</label> <input type="text"
 						maxlength="70" th:field="*{nome}" placeholder="Exemplo: João Victor Ferreira"
 						id="inputNome" class="form-control">
 				</div>
-				<div class="form-group col-lg-6 col-sm-12">
+				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputCurso">Curso:</label> 
 					<select	class="form-control" th:field="*{curso}" id="inputCurso">
 						<option th:value="-1" data-default disabled selected="selected">Selecione o curso</option>
@@ -105,6 +105,12 @@
 						<option th:value="Operador-Caixa">Operador de Caixa</option>
 						<option th:value="Vendas">Vendas</option>
 					</select>
+				</div>
+				<div class="form-group col-lg-3 col-sm-12">
+						<label class="lbl" for="inputCurso">Situação:</label> 
+						<select class="form-control" th:field="*{status}">
+							<option th:each="status : ${T(com.academy.model.StatusAlunoEnum).values()}" th:text="${status.status}" th:value="${status}"></option>
+						</select>
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputIdade">Idade</label> <input

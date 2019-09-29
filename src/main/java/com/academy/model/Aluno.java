@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,6 +28,8 @@ public class Aluno {
 	private Date dataCadastro;
 	@Column(name = "Turno")
 	private String horario;
+	@Enumerated(EnumType.STRING)
+	private StatusAlunoEnum status;
 	private String tel;
 	@Column(name = "telefone_alternativo")
 	private String telAlt;
@@ -35,6 +39,12 @@ public class Aluno {
 	
 	public Integer getId() {
 		return id;
+	}
+	public StatusAlunoEnum getStatus() {
+		return status;
+	}
+	public void setStatus(StatusAlunoEnum status) {
+		this.status = status;
 	}
 	public void setId(Integer id) {
 		this.id = id;
