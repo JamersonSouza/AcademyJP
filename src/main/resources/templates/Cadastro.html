@@ -69,42 +69,60 @@
 	<div class="containerAux">
 		<h2 class="mt-4">CADASTRO DE ALUNOS</h2>
 		<hr class="colorgraph">
-		<form>
+		<form method="post" th:action=@{/cadastrocompleto} th:object="${aluno}">
+	<div class="row">
+		<div class="col-lg-12">
+		<!-- ALERTA DE ERRO AO ENVIAR O OBJETO -->
+
+			<div id="alerta" class="alert alert-danger alert-dismissible fade show" th:if="${#fields.hasAnyErrors()}">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                            <span>&times;</span>
+                        </button>
+					<strong><p th:each="erro : ${fields.allErrors()}" th:text="${erro}"></p></strong>
+			</div>
+			<!-- ALERTA DE DADOS ENVIADO COM SUCESSO -->
+			<div id="alerta" class="alert alert-success alert-dismissible fade show" th:if="${!#strings.isEmpty(cadastroenviado)}">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                            <span>&times;</span>
+                        </button>
+							<strong>ALUNO CADASTRADO COM SUCESSO! <a th:href="@{/}">VOLTAR</a>.</strong>
+				</div>
+		</div>
+	</div>
 			<div class="row">
 				<div class="form-group col-lg-6 col-sm-12">
 					<label class="lbl" for="inputNome">Nome:</label> <input type="text"
-						maxlength="70" placeholder="Exemplo: João Victor Ferreira"
+						maxlength="70" th:field="*{nome}" placeholder="Exemplo: João Victor Ferreira"
 						id="inputNome" class="form-control">
 				</div>
 				<div class="form-group col-lg-6 col-sm-12">
-					<label class="lbl" for="inputCurso">Curso:</label> <select
-						class="form-control" id="inputCurso">
-						<option value="-1" data-default disabled selected>Selecione
-							o curso</option>
-						<option value="Assistente Adm">Assistente Administrativo</option>
-						<option value="CorelDraw">CorelDraw</option>
-						<option value="Informatica">Informática</option>
-						<option value="Op Caixa">Operador de Caixa</option>
-						<option value="Vendas">Vendas</option>
+					<label class="lbl" for="inputCurso">Curso:</label> 
+					<select	class="form-control" th:field="*{curso}" id="inputCurso">
+						<option th:value="-1" data-default disabled selected="selected">Selecione o curso</option>
+						<option th:value="Assistente-Admin">Assistente Administrativo</option>
+						<option th:value="CorelDraw">CorelDraw</option>
+						<option th:value="Informatica">Informática</option>
+						<option th:value="Operador-Caixa">Operador de Caixa</option>
+						<option th:value="Vendas">Vendas</option>
 					</select>
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputIdade">Idade</label> <input
-						type="text" maxlength="7" class="form-control"
+						type="text" maxlength="7" th:field="*{idade}" class="form-control"
 						placeholder="exemplo: 18 anos">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputData">Data do Cadastro:</label> <input
-						type="date" min="2019-01-31" class="form-control" id="inputData">
+						type="date" th:field="*{dataCadastro}" min="2019-01-31" class="form-control" id="inputData">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputTurno">Horário Disponível:</label> <select
-						class="form-control" id="inputTurno">
-						<option value="-1" data-default disabled selected>Escolha
+						class="form-control" th:field="*{horario}" id="inputTurno">
+						<option th:value="-1" data-default disabled selected>Escolha
 							o turno do aluno</option>
-						<option value="Manha">Manhã</option>
-						<option value="Tarde">Tarde</option>
-						<option value="Noite" data-default disabled>Noite</option>
+						<option th:value="Manha">Manhã</option>
+						<option th:value="Tarde">Tarde</option>
+						<option th:value="Noite" data-default disabled>Noite</option>
 					</select>
 				</div>
 			</div>
@@ -113,7 +131,7 @@
 			<div class="row">
 				<div class="form-group col-lg-6 col-sm-12">
 					<label class="lbl" for="inputTel1">Telefone 1:</label> <input
-						type="tel" maxlength="14"
+						type="tel" maxlength="14" th:field="*{tel}"
 						onkeypress="mascara(this, '## # ####-####')"
 						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel1"
 						class="form-control"> <small style="color: #d63031">*Preferencialmente
@@ -121,7 +139,7 @@
 				</div>
 				<div class="form-group col-lg-6 col-sm-12">
 					<label class="lbl" for="inputTel2">Telefone 2:</label> <input
-						type="tel" maxlength="14"
+						type="tel" maxlength="14" th:field="*{telAlt}"
 						onkeypress="mascara(this, '## # ####-####')"
 						placeholder="Exemplo: (00) 9 0101-1010" id="inputTel2"
 						class="form-control">
