@@ -88,10 +88,22 @@ public class AlunoController {
 		if(nome == null || nome.trim().isEmpty()) {
 			nomeAlunos = this.alunoservice.listarTodosAlunos(Sort.by("nome"));
 		}else {
-			nomeAlunos = this.alunodao.findByNomeContainingIgnoreCase(nome);
+			nomeAlunos = this.alunoservice.buscaAlunos(nome);
 			}
 		
 		mv.addObject("nomeAlunos", nomeAlunos);
+		return mv;
+	}
+	
+	@GetMapping("excluir-aluno")
+	public ModelAndView removerAluno(@RequestParam Integer id, @RequestParam(defaultValue = "1")int page) {
+		ModelAndView mv = new ModelAndView("search-all");
+		mv.addObject("aluno", new Aluno());
+		mv.addObject("msgExclusao", "Aluno Excluido");
+		Pageable pagreq = PageRequest.of(page - 1, 6, Sort.by("nome"));
+		Page<Aluno> paginaResult = this.alunoservice.allAlunos(pagreq);
+		mv.addObject("allAlunos", paginaResult);
+		this.alunoservice.excluirAluno(id);
 		return mv;
 	}
 }

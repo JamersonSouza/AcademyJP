@@ -76,7 +76,14 @@
 			</div>
 		</form>
 	</div>
-	
+	<div class="container">
+		<div id="alerta" class="alert alert-danger alert-dismissible fade show" th:if="${!#strings.isEmpty(msgExclusao)}">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                            <span>&times;</span>
+                        </button>
+							<strong>O ALUNO FOI REMOVIDO COM SUCESSO! <a th:href="@{search-All}">CLIQUE AQUI PARA VOLTAR</a></strong>
+				</div>
+	</div>
 	<!-- Lista com Paginação -->
 	 <div class="containerAux">
                 <div class="row">
@@ -106,7 +113,7 @@
                                       
                                       <td><a href="wwww.google.com"><i class="fas fa-edit"></i> Editar</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			 <a style="color: red;"><i class="fas fa-times"></i> Excluir</a>
+			 <a th:href="@{/excluir-aluno(id=${list.id})}" style="color: red;"><i class="fas fa-times"></i> Excluir</a>
 			</td>
                                     </tr>
                             </tbody>
@@ -119,7 +126,7 @@
 			<ul class="nav nav-pills">
 				<li style="background-color: #9b59b6; margin-left: 15px; border-radius: 200px; " class="nav-item" 
 				th:each="i : ${#numbers.sequence(1,allAlunos.totalPages)}" > 
-				<a style="color: #fff;" th:text="${i}" th:href="@{/(page=${i})}" class="nav-link" ></a></li>
+				<a style="color: #fff;" th:text="${i}" th:href="@{/search-All(page=${i})}" class="nav-link" ></a></li>
 			</ul>
 				</div>
 	

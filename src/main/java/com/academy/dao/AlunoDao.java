@@ -17,4 +17,5 @@ public interface AlunoDao extends JpaRepository<Aluno, Integer> {
 //	QUERY ABAIXO EQUIVALENTE AO ContainingIgnoreCase :p
 //	@Query("select p from Aluno p where UPPER(p.nome) like UPPER(CONCAT('%', :nome, '%')) order by p.nome")
 	public List<Aluno> findByNomeContainingIgnoreCase(String nome);
+	
 }

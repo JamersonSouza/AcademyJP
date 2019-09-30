@@ -30,4 +30,12 @@ public class AlunoService {
 	public List<Aluno> listarTodosAlunos(Sort sort){
 		return aluno.findAll();
 	}
+	
+	public List<Aluno> buscaAlunos(String nome){
+		return aluno.findByNomeContainingIgnoreCase(nome);
+	}
+	
+	public void excluirAluno(Integer id) {
+		aluno.deleteById(id);
+	}
 }

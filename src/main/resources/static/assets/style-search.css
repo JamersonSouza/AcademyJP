@@ -89,7 +89,18 @@
 	transition: 0.5s;
 }
 .bt:hover{color: #fff; background: #8e44ad;}
+footer.rodape {
+	background-color: #8e44ad;
+	padding: 15px 0;
+	color: #fff;
+	text-align: center;
+}
 
+footer.rodape p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 1.2em;
+}
 /* Responsividade */
 @media screen and(max-width: 798px) {
 	.navbar li {
