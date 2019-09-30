@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 .container-fluid{
-	overflow: hidden;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -26,29 +25,6 @@
 	font-size: 3em;
 }
 
-.wp {
-	float: left;
-	width: 33, 3%;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
-.wm {
-	width: 50%;
-	float: left;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
-.clear {
-	clear: both;
-}
 
 .pesquisa{background-color: #9b59b6; color: #fff; height: 38px; }
 
@@ -94,29 +70,9 @@
 }
 
 
-footer.rodape {
-	background-color: #8e44ad;
-	padding: 15px 0;
-	color: #fff;
-	text-align: center;
-}
-
-footer.rodape p {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
-	font-size: 1.2em;
-}
-
 /*Formatação Labels */
 .lbl{font-size: 1.2em; font-family: 'Open Sans', serif; font-weight: normal;}
 
-/* Linha colorição */
-.colorgraph {
-  height: 2px;
-  border-top: 0;
-  background: #9b59b6;
-  border-radius: 5px;
-}
 
 .bt{
 	background: #fff;

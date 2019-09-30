@@ -26,30 +26,6 @@
 	font-size: 3em;
 }
 
-.wp {
-	float: left;
-	width: 33, 3%;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
-.wm {
-	width: 50%;
-	float: left;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
-.clear {
-	clear: both;
-}
-
 .title {
 	font-size: 1.3em;
 	color: #fff;
@@ -92,18 +68,6 @@
 }
 
 
-footer.rodape {
-	background-color: #8e44ad;
-	padding: 15px 0;
-	color: #fff;
-	text-align: center;
-}
-
-footer.rodape p {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
-	font-size: 1.2em;
-}
 
 /*Formatação Labels */
 .lbl{font-size: 1.2em; font-family: 'Open Sans', serif; font-weight: normal;}

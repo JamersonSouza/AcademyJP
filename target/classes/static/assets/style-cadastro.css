@@ -29,26 +29,6 @@ body{
 	font-size: 3em;
 }
 
-.wp {
-	float: left;
-	width: 33, 3%;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
-.wm {
-	width: 50%;
-	float: left;
-}
-
-.wg {
-	width: 100%;
-	float: left;
-}
-
 .clear {
 	clear: both;
 }
