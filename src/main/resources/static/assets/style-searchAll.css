@@ -97,6 +97,11 @@
 
 @media screen and (max-width: 500px) {
 	.search .pesquisa{font-size: 0.8em; font-weight: normal;}
+	td{display: inline-block;}
+	tr{display: block;}
+	th{display: inline-block;}
+	thead{display: inline-block;}
+	.table{display: inline-block;}
 	section.secao{
 	background-position: center;
 	}

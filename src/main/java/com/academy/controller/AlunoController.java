@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.academy.model.Aluno;
+import com.academy.model.StatusAlunoEnum;
 import com.academy.service.AlunoService;
 
 @Controller
@@ -68,6 +69,7 @@ public class AlunoController {
 		Pageable pagreq = PageRequest.of(page - 1, 6, Sort.by("nome"));
 		Page<Aluno> paginaResult = this.alunoservice.allAlunos(pagreq);
 		mv.addObject("allAlunos", paginaResult);
+		mv.addObject("listaStatus", StatusAlunoEnum.values());
 		return mv;
 	}
 }
