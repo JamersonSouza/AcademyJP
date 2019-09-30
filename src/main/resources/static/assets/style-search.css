@@ -54,6 +54,11 @@
 	font-size: 1.3em;
 	color: #fff;
 }
+.card-title{
+	text-transform: uppercase;
+	font-family: 'Roboto', serif;
+	font-weight: normal;
+}
 .titulo{
 	font-family: 'Roboto', serif;
 	text-transform: uppercase;

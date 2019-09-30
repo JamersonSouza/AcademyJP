@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="JamersonSouza">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Projeto para Gerenciamento de alunos">
+<link rel="stylesheet" th:href="@{assets/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{assets/style-searchAll.css}">
+<script th:src="@{assets/jquery-3.4.1.min.js}"></script>
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP|Open+Sans|Roboto&display=swap"
+	rel="stylesheet">
+<script th:src="@{assets/bootstrap.min.js}"></script>
+<script th:src="@{assets/bootstrap.bundle.min.js}"></script>
+<title>Pesquisa Aluno :: AcademyJP</title>
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-light navbar-expand-lg"
+						style="background-color: #a55eea">
+						<a th:href="@{/}" class="navbar-brand"> <img
+							th:src="@{img/logoJ2.png}" width="30px" height="30px"
+							class="d-inline-block align-top"> <span class="title">uventude
+								Presente</span>
+						</a>
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#nav1">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-end"
+							id="nav1">
+							<ul class="navbar nav">
+								<li class="nav-item"><a th:href="@{/}"
+									class="nav-link active"><i class="fas fa-home"></i> HOME</a></li>
+
+								<li class="nav-item"><a th:href="@{/cadastro}"
+									class="nav-link"><i class="fas fa-user-graduate"></i>
+										CADASTRAR ALUNO</a></li>
+
+								<li class="nav-item"><a href="#" style="color: #6F1E51"
+									class="nav-link"><i class="fas fa-search"></i> PESQUISAR
+										ALUNO</a></li>
+
+								<li class="nav-item"><a href="#" class="nav-link"
+									id="close"><i class="fas fa-times"></i> SAIR</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+<body>
+
+	<div class="containerAux">
+		<!-- Barra de Pesquisa -->
+		<form th:action="@{/search-all}" method="post">
+			<div class="col-lg-10 offset-lg-2 offset-md-3 form-group col-md-12">
+				<div class="col-lg-10 mt-5 col-md-8 col-sm-6">
+					<div class="input-group">
+						<input type="text" name="search-all" id="search-all"
+							class="form-control" placeholder="Insira o nome do aluno..">
+							<div class="input-group-prepend">
+							<button type="submit" class="btn pesquisa"><i class="fas fa-search"></i> BUSCAR</button>
+							</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<!-- Lista com Paginação -->
+	
+</body>
+</html>

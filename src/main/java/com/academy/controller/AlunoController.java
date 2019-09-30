@@ -3,11 +3,16 @@ package com.academy.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.academy.model.Aluno;
@@ -54,6 +59,15 @@ public class AlunoController {
 	@GetMapping("/search")
 	public ModelAndView search() {
 		ModelAndView mv = new ModelAndView("search");
+		return mv;
+	}
+	
+	@GetMapping("/search-All")
+	public ModelAndView searchAll(@RequestParam(defaultValue="1") int page) {
+		ModelAndView mv = new ModelAndView("search-all");
+		Pageable pagreq = PageRequest.of(page - 1, 6, Sort.by("nome"));
+		Page<Aluno> paginaResult = this.alunoservice.allAlunos(pagreq);
+		mv.addObject("allAlunos", paginaResult);
 		return mv;
 	}
 }

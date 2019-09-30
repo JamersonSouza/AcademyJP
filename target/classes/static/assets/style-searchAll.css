@@ -15,7 +15,7 @@
 .containerAux {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 2% 5%;
+	padding: 2% 2%;
 }
 
 .center {
@@ -49,6 +49,8 @@
 .clear {
 	clear: both;
 }
+
+.pesquisa{background-color: #9b59b6; color: #fff; height: 38px; }
 
 .title {
 	font-size: 1.3em;
@@ -132,9 +134,13 @@ footer.rodape p {
 		width: 100%;
 		display: block;
 	}
+	.teste{
+		margin-left: 5%;
+	}
 }
 
 @media screen and (max-width: 500px) {
+	.search .pesquisa{font-size: 0.8em; font-weight: normal;}
 	section.secao{
 	background-position: center;
 	}

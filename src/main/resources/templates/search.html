@@ -62,19 +62,19 @@
 	<hr class="colorgraph">
 	   <div class="row">
 	   <!-- todos -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="card mt-2" style="width: 20rem;">
-                    <a href="#" title="Pesquisar dentre todos os alunos"><img class="card-img-top" src="img/todos.jpg"></a>
+                    <a th:href="@{search-All}" title="Pesquisar dentre todos os alunos"><img class="card-img-top" src="img/todos.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">Todos Alunos</h4>
                         <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos cadastrados no sistema.</h6>
-                        <a href="#" class="card-link">Clique aqui.</a>
+                        <a th:href="@{search-All}" class="card-link">Clique aqui.</a>
                     </div>
                 </div>
             </div>
             
             <!-- Concluidos -->
-             <div class="col-lg-4 ">
+             <div class="col-lg-4 col-md-6 ">
                 <div class="card mt-2" style="width: 20rem;">
                    <a href="#" title="Pesquisar apenas os concluidos"><img class="card-img-top mb-4" src="img/concluidos.jpg"></a>
                     <div class="card-body ">
@@ -86,7 +86,7 @@
             </div>
             
             <!-- Desistentes -->
-               <div class="col-lg-4 ">
+               <div class="col-lg-4 col-md-6">
                 <div class="card mt-2" style="width: 20rem;">
                     <a href="#" title="Pesquisar Alunos desistentes"><img class="card-img-top mb-4" src="img/desistents.jpg"></a>
                     <div class="card-body">
@@ -98,7 +98,7 @@
             </div>
             
             <!-- Em andamento -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="card mt-2" style="width: 20rem;">
                     <a href="#" title="Pesquisar os que estão em andamento"><img class="card-img-top" src="img/andamento.jpg"></a>
                     <div class="card-body">
