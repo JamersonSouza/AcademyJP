@@ -1,5 +1,7 @@
 package com.academy.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.academy.dao.AlunoDao;
 import com.academy.model.Aluno;
 import com.academy.model.StatusAlunoEnum;
 import com.academy.service.AlunoService;
@@ -24,6 +27,9 @@ public class AlunoController {
 	
 	@Autowired
 	private AlunoService alunoservice;
+	
+	@Autowired
+	private AlunoDao alunodao;
 	
 	@GetMapping("/index")
 	public String viewTeste() {
@@ -60,16 +66,32 @@ public class AlunoController {
 	@GetMapping("/search")
 	public ModelAndView search() {
 		ModelAndView mv = new ModelAndView("search");
+		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 	
 	@GetMapping("/search-All")
 	public ModelAndView searchAll(@RequestParam(defaultValue="1") int page) {
 		ModelAndView mv = new ModelAndView("search-all");
+		mv.addObject("aluno", new Aluno());
 		Pageable pagreq = PageRequest.of(page - 1, 6, Sort.by("nome"));
 		Page<Aluno> paginaResult = this.alunoservice.allAlunos(pagreq);
 		mv.addObject("allAlunos", paginaResult);
-		mv.addObject("listaStatus", StatusAlunoEnum.values());
+		return mv;
+	}
+	
+	@PostMapping("search-result")
+	public ModelAndView resultPesquisa(@RequestParam(required = false) String nome) {
+		ModelAndView mv = new ModelAndView("search-result");
+		List<Aluno> nomeAlunos;
+		
+		if(nome == null || nome.trim().isEmpty()) {
+			nomeAlunos = this.alunoservice.listarTodosAlunos(Sort.by("nome"));
+		}else {
+			nomeAlunos = this.alunodao.findByNomeContainingIgnoreCase(nome);
+			}
+		
+		mv.addObject("nomeAlunos", nomeAlunos);
 		return mv;
 	}
 }

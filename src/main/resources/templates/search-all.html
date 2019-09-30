@@ -62,11 +62,11 @@
 
 	<div class="containerAux">
 		<!-- Barra de Pesquisa -->
-		<form th:action="@{/search-all}" method="post">
+		<form action="/search-result" th:object="${aluno}" method="POST">
 			<div class="col-lg-10 offset-lg-2 offset-md-3 form-group col-md-12">
 				<div class="col-lg-10 mt-5 col-md-8 col-sm-6">
 					<div class="input-group">
-						<input type="text" name="search-all" id="search-all"
+						<input type="text" th:field="*{nome}" name="search-all" id="search-all"
 							class="form-control" placeholder="Insira o nome do aluno..">
 							<div class="input-group-prepend">
 							<button type="submit" class="btn pesquisa"><i class="fas fa-search"></i> BUSCAR</button>
