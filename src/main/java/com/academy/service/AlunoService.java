@@ -38,4 +38,8 @@ public class AlunoService {
 	public void excluirAluno(Integer id) {
 		aluno.deleteById(id);
 	}
+	
+	public void editarAluno(Integer id) {
+		aluno.findById(id);
+	}
 }

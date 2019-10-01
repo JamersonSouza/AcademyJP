@@ -63,6 +63,21 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@PostMapping("/cadastrocompleto2")
+	public ModelAndView CadastroConcluido(@Valid @ModelAttribute Aluno aluno, Errors errors) {
+		ModelAndView mv = new ModelAndView("Cadastro-edit");
+		mv.addObject("aluno", new Aluno());
+		if(errors.hasErrors()) {
+			mv.addObject("erro", "erro");
+			return mv;
+		}
+		mv.addObject("msgEdit", "enviado com sucesso");
+		alunoservice.inserirAluno(aluno);
+		System.out.println("Aluno foi inserido com sucesso " + aluno.getNome());
+		return mv;
+	}
+	
+	
 	@GetMapping("/search")
 	public ModelAndView search() {
 		ModelAndView mv = new ModelAndView("search");
@@ -104,6 +119,16 @@ public class AlunoController {
 		Page<Aluno> paginaResult = this.alunoservice.allAlunos(pagreq);
 		mv.addObject("allAlunos", paginaResult);
 		this.alunoservice.excluirAluno(id);
+		return mv;
+	}
+	
+	@GetMapping("editar-aluno")
+	public ModelAndView editarAluno(@RequestParam Integer id) {
+		ModelAndView mv = new ModelAndView("Cadastro-edit");
+		mv.addObject("aluno", new Aluno());
+		this.alunoservice.editarAluno(id);
+		this.alunoservice.excluirAluno(id);
+		mv.addObject("msgedit", "editado com sucesso");
 		return mv;
 	}
 }

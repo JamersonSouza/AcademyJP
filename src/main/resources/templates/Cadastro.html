@@ -73,13 +73,6 @@
 	<div class="row">
 		<div class="col-lg-12">
 		<!-- ALERTA DE ERRO AO ENVIAR O OBJETO -->
-
-			<div id="alerta" class="alert alert-danger alert-dismissible fade show" th:if="${#fields.hasAnyErrors()}">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
-                            <span>&times;</span>
-                        </button>
-					<strong><p th:each="erro : ${fields.allErrors()}" th:text="${erro}"></p></strong>
-			</div>
 			<!-- ALERTA DE DADOS ENVIADO COM SUCESSO -->
 			<div id="alerta" class="alert alert-success alert-dismissible fade show" th:if="${!#strings.isEmpty(cadastroenviado)}">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">

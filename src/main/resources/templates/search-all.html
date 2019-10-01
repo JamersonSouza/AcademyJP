@@ -83,6 +83,7 @@
                         </button>
 							<strong>O ALUNO FOI REMOVIDO COM SUCESSO! <a th:href="@{search-All}">CLIQUE AQUI PARA VOLTAR</a></strong>
 				</div>
+				
 	</div>
 	<!-- Lista com Paginação -->
 	 <div class="containerAux">
@@ -111,7 +112,7 @@
                                      <td th:text="${list.status}" ></td>
                                       <td th:text="${list.tel}"></td>
                                       
-                                      <td><a href="wwww.google.com"><i class="fas fa-edit"></i> Editar</a>
+                                      <td><a th:href="@{editar-aluno(id=${list.id})}"><i class="fas fa-edit"></i> Editar</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			 <a th:href="@{/excluir-aluno(id=${list.id})}" style="color: red;"><i class="fas fa-times"></i> Excluir</a>
 			</td>
