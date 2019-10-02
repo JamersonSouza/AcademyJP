@@ -20,5 +20,14 @@ public interface AlunoDao extends JpaRepository<Aluno, Integer> {
 	
 	@Query("select p from Aluno p where p.status = 'Concluido' ")
 	public List<Aluno> findStatus();
+	
+	@Query("select p from Aluno p where p.status = 'Em-Andamento' ")
+	public List<Aluno> findStatusAndamento();
+	
+	@Query("select p from Aluno p where p.status = 'Aguardando-Turma' ")
+	public List<Aluno> findByStatusAguardando();
+	
+	@Query("select p from Aluno p where p.status = 'Desistente' ")
+	public List<Aluno> findByStatusDesistentes();
 }
 

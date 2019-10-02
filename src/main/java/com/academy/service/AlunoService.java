@@ -49,4 +49,16 @@ public class AlunoService {
 	public List<Aluno> listaConcluidos(){
 		return aluno.findStatus();
 	}
+	
+	public List<Aluno> listaDesistentes(){
+		return aluno.findByStatusDesistentes();
+	}
+	
+	public List<Aluno> listaAguardando(){
+		return aluno.findByStatusAguardando();
+	}
+	
+	public List<Aluno> listaAndamento(){
+		return aluno.findStatusAndamento();
+	}
 }

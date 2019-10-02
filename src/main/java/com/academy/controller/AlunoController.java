@@ -94,6 +94,31 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@GetMapping("/search-desistentes")
+	public ModelAndView alunosDesistentes() {
+		ModelAndView mv = new ModelAndView("search-desistentes");
+		mv.addObject("aluno", new Aluno());
+		mv.addObject("AlunosDesistentes", this.alunoservice.listaDesistentes());
+		return mv;
+	}
+	
+	@GetMapping("/search-aguardando-turma")
+	public ModelAndView alunosAguardandoTurma() {
+		ModelAndView mv = new ModelAndView("search-aguardando-turma");
+		mv.addObject("aluno", new Aluno());
+		mv.addObject("AlunosAguardandoTurma", this.alunoservice.listaAguardando());
+		return mv;
+	}
+	
+	@GetMapping("/search-em-andamento")
+	public ModelAndView alunosEmAndamento() {
+		ModelAndView mv = new ModelAndView("search-em-andamento");
+		mv.addObject("aluno", new Aluno());
+		mv.addObject("AlunosEmAndamento", this.alunoservice.listaAndamento());
+		return mv;
+	}
+	
+	
 	@GetMapping("/search-All")
 	public ModelAndView searchAll(@RequestParam(defaultValue="1") int page) {
 		ModelAndView mv = new ModelAndView("search-all");

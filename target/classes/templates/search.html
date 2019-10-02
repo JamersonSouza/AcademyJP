@@ -88,7 +88,7 @@
             <!-- Desistentes -->
                <div class="col-lg-4 col-md-6">
                 <div class="card mt-2" style="width: 20rem;">
-                    <a href="#" title="Pesquisar Alunos desistentes"><img class="card-img-top mb-4" src="img/desistents.jpg"></a>
+                    <a th:href="@{search-desistentes}" title="Pesquisar Alunos desistentes"><img class="card-img-top mb-4" src="img/desistents.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">Desistentes</h4>
                         <h6 class="card-subtitle mb-3 mt-2 text-muted">Encontre todos alunos que desistiram do curso.</h6>
@@ -100,10 +100,23 @@
             <!-- Em andamento -->
             <div class="col-lg-4 col-md-6">
                 <div class="card mt-2" style="width: 20rem;">
-                    <a href="#" title="Pesquisar os que estão em andamento"><img class="card-img-top" src="img/andamento.jpg"></a>
+                    <a th:href="@{search-em-andamento}" title="Pesquisar os que estão em andamento"><img class="card-img-top" src="img/andamento.jpg"></a>
                     <div class="card-body">
                         <h4 class="card-title text-center">Em Andamento</h4>
                         <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos que ainda estão fazendo o curso.</h6>
+                        <a href="#" class="card-link">Clique aqui.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AGUARDANDO TURMA -->
+             <div class="col-lg-4 col-md-6">
+                <div class="card mt-2" style="width: 20rem;">
+                    <a th:href="@{search-aguardando-turma}" title="Pesquisar os que estão aguardando turma"><img class="card-img-top" src="img/aguardando.jpg"></a>
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Aguardando Turma</h4>
+                        <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos que ainda estão aguardando a
+                         abertura de uma turma.</h6>
                         <a href="#" class="card-link">Clique aqui.</a>
                     </div>
                 </div>

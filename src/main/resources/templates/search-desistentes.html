@@ -45,7 +45,7 @@
 									class="nav-link"><i class="fas fa-user-graduate"></i>
 										CADASTRAR ALUNO</a></li>
 
-								<li class="nav-item"><a th:href="@{search}" style="color: #6F1E51"
+								<li class="nav-item"><a href="#" style="color: #6F1E51"
 									class="nav-link"><i class="fas fa-search"></i> PESQUISAR
 										ALUNO</a></li>
 
@@ -103,7 +103,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr  th:each="list : ${allAlunos}" >
+                                <tr  th:each="list : ${AlunosDesistentes}" >
                                      <td th:text="${list.id}"></td>
                                      <td th:text="${list.nome}"></td>
                                      <td th:text="${list.curso}"></td>
@@ -123,13 +123,6 @@
                 </div>
         </div>
 	<br><br>
-	<div class="container">
-			<ul class="nav nav-pills">
-				<li style="background-color: #9b59b6; margin-left: 15px; border-radius: 200px; " class="nav-item" 
-				th:each="i : ${#numbers.sequence(1,allAlunos.totalPages)}" > 
-				<a style="color: #fff;" th:text="${i}" th:href="@{/search-All(page=${i})}" class="nav-link" ></a></li>
-			</ul>
-				</div>
 	
 </body>
 </html>
