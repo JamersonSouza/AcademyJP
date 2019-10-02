@@ -59,7 +59,32 @@
 		</div>
 	</header>
 <body>
-	
+
+	<div class="containerAux">
+		<!-- Barra de Pesquisa -->
+		<form action="/search-result" th:object="${aluno}" method="POST">
+			<div class="col-lg-10 offset-lg-2 offset-md-3 form-group col-md-12">
+				<div class="col-lg-10 mt-5 col-md-8 col-sm-6">
+					<div class="input-group">
+						<input type="text" th:field="*{nome}" name="search-all" id="search-all"
+							class="form-control" placeholder="Insira o nome do aluno..">
+							<div class="input-group-prepend">
+							<button type="submit" class="btn pesquisa"><i class="fas fa-search"></i> BUSCAR</button>
+							</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="container">
+		<div id="alerta" class="alert alert-danger alert-dismissible fade show" th:if="${!#strings.isEmpty(msgExclusao)}">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+                            <span>&times;</span>
+                        </button>
+							<strong>O ALUNO FOI REMOVIDO COM SUCESSO! <a th:href="@{search-All}">CLIQUE AQUI PARA VOLTAR</a></strong>
+				</div>
+				
+	</div>
 	<!-- Lista com Paginação -->
 	 <div class="containerAux">
                 <div class="row">
@@ -78,7 +103,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr  th:each="list : ${nomeAlunos}" >
+                                <tr  th:each="list : ${AlunosConcluidos}" >
                                      <td th:text="${list.id}"></td>
                                      <td th:text="${list.nome}"></td>
                                      <td th:text="${list.curso}"></td>
@@ -87,18 +112,15 @@
                                      <td th:text="${list.status}" ></td>
                                       <td th:text="${list.tel}"></td>
                                       
-                                     <td><a th:href="@{editar-aluno(id=${list.id})}"><i class="fas fa-edit"></i> Editar</a>
+                                      <td><a th:href="@{editar-aluno(id=${list.id})}"><i class="fas fa-edit"></i> Editar</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			 <a th:href="@{/excluir-aluno(id=${list.id})}" style="color: red;"><i class="fas fa-times"></i> Excluir</a>
 			</td>
-			              </tr>
+                                    </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-        </div>
-        <div class="container">
-        <a th:href="@{search-All}" class="btn btn-primary">VOLTAR</a>
         </div>
 	<br><br>
 	

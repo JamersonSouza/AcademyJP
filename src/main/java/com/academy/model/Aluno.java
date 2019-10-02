@@ -4,8 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +11,7 @@ import javax.persistence.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Aluno {
+public class Aluno{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,8 +23,7 @@ public class Aluno {
 	private Date dataCadastro;
 	@Column(name = "Turno")
 	private String horario;
-	@Enumerated(EnumType.STRING)
-	private StatusAlunoEnum status;
+	private String status;
 	private String tel;
 	@Column(name = "telefone_alternativo")
 	private String telAlt;
@@ -37,12 +34,7 @@ public class Aluno {
 	public Integer getId() {
 		return id;
 	}
-	public StatusAlunoEnum getStatus() {
-		return status;
-	}
-	public void setStatus(StatusAlunoEnum status) {
-		this.status = status;
-	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -90,9 +82,17 @@ public class Aluno {
 		this.telAlt = telAlt;
 	}
 	
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
-		return nome;
+		return status;
 	}
 	
 }

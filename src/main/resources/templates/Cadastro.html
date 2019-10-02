@@ -54,8 +54,9 @@
 									style="color: #6F1E51" class="nav-link"><i
 										class="fas fa-user-graduate"></i> CADASTRAR ALUNO</a></li>
 
-								<li class="nav-item"><a th:href="@{search}" class="nav-link"><i
-										class="fas fa-search"></i> PESQUISAR ALUNO</a></li>
+								<li class="nav-item"><a th:href="@{search}"
+									class="nav-link"><i class="fas fa-search"></i> PESQUISAR
+										ALUNO</a></li>
 
 								<li class="nav-item"><a href="#" class="nav-link"
 									id="close"><i class="fas fa-times"></i> SAIR</a></li>
@@ -69,30 +70,38 @@
 	<div class="containerAux">
 		<h2 class="mt-4">CADASTRO DE ALUNOS</h2>
 		<hr class="colorgraph">
-		<form method="post" th:action=@{/cadastrocompleto} th:object="${aluno}">
-	<div class="row">
-		<div class="col-lg-12">
-		<!-- ALERTA DE ERRO AO ENVIAR O OBJETO -->
-			<!-- ALERTA DE DADOS ENVIADO COM SUCESSO -->
-			<div id="alerta" class="alert alert-success alert-dismissible fade show" th:if="${!#strings.isEmpty(cadastroenviado)}">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
-                            <span>&times;</span>
-                        </button>
-							<strong>ALUNO CADASTRADO COM SUCESSO! <a th:href="@{/}">VOLTAR</a>.</strong>
+		<form method="post" th:action=@{/cadastrocompleto}
+			th:object="${aluno}">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- ALERTA DE ERRO AO ENVIAR O OBJETO -->
+					<!-- ALERTA DE DADOS ENVIADO COM SUCESSO -->
+					<div id="alerta"
+						class="alert alert-success alert-dismissible fade show"
+						th:if="${!#strings.isEmpty(cadastroenviado)}">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Fechar">
+							<span>&times;</span>
+						</button>
+						<strong>ALUNO CADASTRADO COM SUCESSO! <a th:href="@{/}">VOLTAR</a>.
+						</strong>
+					</div>
 				</div>
-		</div>
-	</div>
+			</div>
 			<div class="row">
 				<div class="form-group col-lg-5 col-sm-12">
 					<label class="lbl" for="inputNome">Nome:</label> <input type="text"
-						maxlength="70" th:field="*{nome}" placeholder="Exemplo: João Victor Ferreira"
-						id="inputNome" class="form-control">
+						maxlength="70" th:field="*{nome}"
+						placeholder="Exemplo: João Victor Ferreira" id="inputNome"
+						class="form-control">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
-					<label class="lbl" for="inputCurso">Curso:</label> 
-					<select	class="form-control" th:field="*{curso}" id="inputCurso">
-						<option th:value="-1" data-default disabled selected="selected">Selecione o curso</option>
-						<option th:value="Assistente-Admin">Assistente Administrativo</option>
+					<label class="lbl" for="inputCurso">Curso:</label> <select
+						class="form-control" th:field="*{curso}" id="inputCurso">
+						<option th:value="-1" data-default disabled selected="selected">Selecione
+							o curso</option>
+						<option th:value="Assistente-Admin">Assistente
+							Administrativo</option>
 						<option th:value="CorelDraw">CorelDraw</option>
 						<option th:value="Informatica">Informática</option>
 						<option th:value="Operador-Caixa">Operador de Caixa</option>
@@ -100,10 +109,13 @@
 					</select>
 				</div>
 				<div class="form-group col-lg-3 col-sm-12">
-						<label class="lbl" for="inputCurso">Situação:</label> 
-						<select class="form-control" th:field="*{status}">
-							<option th:each="status : ${T(com.academy.model.StatusAlunoEnum).values()}" th:text="${status.status}" th:value="${status}"></option>
-						</select>
+					<label class="lbl" for="inputCurso">Situação:</label> <select
+						class="form-control" th:field="*{status}">
+						<option th:value="Aguardando-Turma">Aguardando Turma</option>
+						<option th:value="Concluido">Concluído</option>
+						<option th:value="Desistente">Desistente</option>
+						<option th:value="Em-Andamento">Em Andamento</option>
+					</select>
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputIdade">Idade</label> <input
@@ -112,7 +124,8 @@
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputData">Data do Cadastro:</label> <input
-						type="date" th:field="*{dataCadastro}" min="2019-01-31" class="form-control" id="inputData">
+						type="date" th:field="*{dataCadastro}" min="2019-01-31"
+						class="form-control" id="inputData">
 				</div>
 				<div class="form-group col-lg-4 col-sm-12">
 					<label class="lbl" for="inputTurno">Horário Disponível:</label> <select
@@ -145,10 +158,9 @@
 				</div>
 			</div>
 			<div class="row">
-			<div class="col-lg-4 offset-lg-4  mt-4">
-				<button class="bt col-sm-12">SALVAR
-					INFORMAÇÕES</button>
-					</div>
+				<div class="col-lg-4 offset-lg-4  mt-4">
+					<button class="bt col-sm-12">SALVAR INFORMAÇÕES</button>
+				</div>
 			</div>
 		</form>
 	</div>

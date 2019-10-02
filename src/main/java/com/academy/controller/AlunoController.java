@@ -41,7 +41,7 @@ public class AlunoController {
 		ModelAndView mv = new ModelAndView("login");
 		return mv;
 	}
-	
+//	 ============== MÉTODOS PARA CADASTRO & CADASTRO-EDIT ==============
 	@GetMapping("/cadastro")
 	public ModelAndView cadastroAluno(@ModelAttribute Aluno aluno) {
 		ModelAndView mv = new ModelAndView("Cadastro");
@@ -63,7 +63,7 @@ public class AlunoController {
 		return mv;
 	}
 	
-	@PostMapping("/cadastrocompleto2")
+	@PostMapping("/cadastro-completo")
 	public ModelAndView CadastroConcluido(@Valid @ModelAttribute Aluno aluno, Errors errors) {
 		ModelAndView mv = new ModelAndView("Cadastro-edit");
 		mv.addObject("aluno", new Aluno());
@@ -77,11 +77,20 @@ public class AlunoController {
 		return mv;
 	}
 	
+//	============= Métodos para Pesquisa ==========
 	
 	@GetMapping("/search")
 	public ModelAndView search() {
 		ModelAndView mv = new ModelAndView("search");
 		mv.addObject("aluno", new Aluno());
+		return mv;
+	}
+	
+	@GetMapping("/search-concluidos")
+	public ModelAndView alunosConcluidos() {
+		ModelAndView mv = new ModelAndView("search-concluidos");
+		mv.addObject("aluno", new Aluno());
+		mv.addObject("AlunosConcluidos", this.alunoservice.listaConcluidos());
 		return mv;
 	}
 	
@@ -110,6 +119,8 @@ public class AlunoController {
 		return mv;
 	}
 	
+//	============ MÉTODO PARA REMOÇÃO DO ALUNO ==========
+	
 	@GetMapping("excluir-aluno")
 	public ModelAndView removerAluno(@RequestParam Integer id, @RequestParam(defaultValue = "1")int page) {
 		ModelAndView mv = new ModelAndView("search-all");
@@ -121,6 +132,8 @@ public class AlunoController {
 		this.alunoservice.excluirAluno(id);
 		return mv;
 	}
+	
+//	============ MÉTODO PARA EDIÇÃO DO ALUNO ==========
 	
 	@GetMapping("editar-aluno")
 	public ModelAndView editarAluno(@RequestParam Integer id) {

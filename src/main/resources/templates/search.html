@@ -76,11 +76,11 @@
             <!-- Concluidos -->
              <div class="col-lg-4 col-md-6 ">
                 <div class="card mt-2" style="width: 20rem;">
-                   <a href="#" title="Pesquisar apenas os concluidos"><img class="card-img-top mb-4" src="img/concluidos.jpg"></a>
+                   <a th:href="@{search-concluidos}" title="Pesquisar apenas os concluidos"><img class="card-img-top mb-4" src="img/concluidos.jpg"></a>
                     <div class="card-body ">
                         <h4 class="card-title text-center ">Concluintes</h4>
                         <h6 class="card-subtitle mb-3 mt-2 text-muted">Encontre todos alunos com status de curso concluído.</h6>
-                        <a href="#" class="card-link">Clique aqui.</a>
+                        <a  th:href="@{/search-concluidos}" class="card-link">Clique aqui.</a>
                     </div>
                 </div>
             </div>
