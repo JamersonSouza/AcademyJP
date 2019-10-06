@@ -12,13 +12,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.academy.dao.AlunoDao;
+import com.academy.dao.UserLoginDao;
 import com.academy.model.Aluno;
+import com.academy.model.UserLogin;
 
 @Service
 public class AlunoService {
 	
 	@Autowired
 	private AlunoDao aluno;
+	
+	@Autowired
+	private UserLoginDao login;
 	
 	//Salvar Aluno no Bd
 	public void inserirAluno(Aluno student){
@@ -60,5 +65,22 @@ public class AlunoService {
 	
 	public List<Aluno> listaAndamento(){
 		return aluno.findStatusAndamento();
+	}
+	
+//	======== Fazer Login =======
+	public UserLogin efetuarlogin(String email, String senha) throws ServiceException{
+		UserLogin userlogin = this.login.findByLogin(email, senha);
+		if(userlogin == null) {
+			throw new ServiceException("Email ou senha inválidos!");
+		}
+		return userlogin;
+	}
+	
+	public void salvarUsuario(UserLogin usuario) throws Exception{
+		if(this.login.buscaEmail(usuario.getEmail()) != null) {
+			throw new EmailException("email já existe no sistema");
+		}else {
+			this.login.save(usuario);
+		}
 	}
 }
