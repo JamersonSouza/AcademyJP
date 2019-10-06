@@ -41,8 +41,9 @@ public class AlunoController {
 	}
 
 	@GetMapping("/login")
-	public ModelAndView login() {
+	public ModelAndView login(@ModelAttribute UserLogin user) {
 		ModelAndView mv = new ModelAndView("login");
+		mv.addObject("user", new UserLogin());
 		return mv;
 	}
 
@@ -175,17 +176,21 @@ public class AlunoController {
 	}
 
 //	============ EFETUAR LOGIN ============
-	@PostMapping("/login/index")
+	@PostMapping("/index")
 	public ModelAndView login(@ModelAttribute UserLogin user, HttpSession session) {
 		ModelAndView mv = new ModelAndView("login");
-		try {
-			UserLogin loginuser = this.alunoservice.efetuarlogin(user.getEmail(), user.getSenha());
-			session.setAttribute("userLogado", loginuser);
-			session.getAttribute("userLogado");
-
-		} catch (ServiceException e) {
+		mv.addObject("user", new UserLogin());
+			UserLogin loginuser;
+			try {
+				loginuser = this.alunoservice.efetuarlogin(user.getEmail(), user.getSenha());
+				session.setAttribute("userLogado", loginuser);
+				session.getAttribute("userLogado");
+			} catch (ServiceException e) {
 				mv.addObject("msgLoginErro", e.getMessage());
-		}
+				return mv;
+			}
+	
+			
 		return index();
 	}
 	
