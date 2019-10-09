@@ -130,9 +130,8 @@ footer.rodape p {
 	}
 }
 
-@media screen and (max-width: 500px) {
-	.main-div {
+@media screen and (max-width: 500px){
+	.main-div{
 		max-width: 100%;
 	}
-
 }

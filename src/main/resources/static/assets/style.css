@@ -159,14 +159,12 @@ footer.rodape p {
 	section.secao{
 	background-position: center;
 	}
-	.title-bg{
-		font-size: 2em;
-	}
+	
 	.navbar li {
 		width: 100%;
 		display: block; 
 	}
-	
+
 	#close{ 
 	border: none;
 	}

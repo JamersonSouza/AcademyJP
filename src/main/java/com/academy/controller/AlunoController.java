@@ -40,7 +40,7 @@ public class AlunoController {
 		return mv;
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/")
 	public ModelAndView login(@ModelAttribute UserLogin user) {
 		ModelAndView mv = new ModelAndView("login");
 		mv.addObject("user", new UserLogin());
@@ -214,4 +214,11 @@ public class AlunoController {
 		mv.addObject("conta", "contacriada");
 		return mv;
 	}
+//	======= FINALIZAR SESSÃO ========= 
+	@PostMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 }

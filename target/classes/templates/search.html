@@ -24,7 +24,7 @@
 				<div class="col-12">
 					<nav class="navbar navbar-light navbar-expand-lg"
 						style="background-color: #a55eea">
-						<a th:href="@{/}" class="navbar-brand"> <img th:src="@{img/logoJ2.png}"
+						<a th:href="@{/index}" class="navbar-brand"> <img th:src="@{img/logoJ2.png}"
 							width="30px" height="30px" class="d-inline-block align-top">
 							<span class="title">uventude Presente</span>
 						</a>
@@ -47,7 +47,9 @@
 							</li>
 							
 							<li class="nav-item">
-							<a href="#" class="nav-link" id="close"><i class="fas fa-times"></i> SAIR</a>
+							<form th:action="@{/logout}" method="post">
+							<button type="submit" style="width: 100px; padding: 5px; border-radius: 5px; border: 2px solid #8e44ad;" class="botao btn nav-link" id="close"><i class="fas fa-times"></i> SAIR</button>
+							</form>
 							</li>
 						</ul>
 						</div>
@@ -92,7 +94,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-center">Desistentes</h4>
                         <h6 class="card-subtitle mb-3 mt-2 text-muted">Encontre todos alunos que desistiram do curso.</h6>
-                        <a href="#" class="card-link">Clique aqui.</a>
+                        <a th:href="@{search-desistentes}" class="card-link">Clique aqui.</a>
                     </div>
                 </div>
             </div>
@@ -104,7 +106,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-center">Em Andamento</h4>
                         <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos que ainda estão fazendo o curso.</h6>
-                        <a href="#" class="card-link">Clique aqui.</a>
+                        <a th:href="@{search-em-andamento}" class="card-link">Clique aqui.</a>
                     </div>
                 </div>
             </div>
@@ -117,7 +119,7 @@
                         <h4 class="card-title text-center">Aguardando Turma</h4>
                         <h6 class="card-subtitle mb-3 text-muted">Encontre todos alunos que ainda estão aguardando a
                          abertura de uma turma.</h6>
-                        <a href="#" class="card-link">Clique aqui.</a>
+                        <a th:href="@{search-aguardando-turma}" class="card-link">Clique aqui.</a>
                     </div>
                 </div>
             </div>

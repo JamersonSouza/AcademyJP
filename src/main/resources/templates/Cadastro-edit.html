@@ -35,7 +35,7 @@
 				<div class="col-12">
 					<nav class="navbar navbar-light navbar-expand-lg"
 						style="background-color: #a55eea">
-						<a th:href="@{/}" class="navbar-brand"> <img
+						<a th:href="@{/index}" class="navbar-brand"> <img
 							th:src="@{img/logoJ2.png}" width="30px" height="30px"
 							class="d-inline-block align-top"> <span class="title">uventude
 								Presente</span>
@@ -57,8 +57,11 @@
 								<li class="nav-item"><a th:href="@{search}" class="nav-link"><i
 										class="fas fa-search"></i> PESQUISAR ALUNO</a></li>
 
-								<li class="nav-item"><a href="#" class="nav-link"
-									id="close"><i class="fas fa-times"></i> SAIR</a></li>
+								<li class="nav-item">
+								<form th:action="@{/logout}" method="post">
+							<button type="submit" style="width: 100px; padding: 5px; border-radius: 5px; border: 2px solid #8e44ad;" class="botao btn nav-link" id="close"><i class="fas fa-times"></i> SAIR</button>
+							</form>
+								</li>
 							</ul>
 						</div>
 					</nav>
